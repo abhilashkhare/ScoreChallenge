@@ -12,13 +12,23 @@ The ScoreChallenge project is designed to automate testing for mobile applicatio
 
 ## Getting Started
 
+### Rationale for test automation
+Project is based on Page Object Model where tests and helper method for the page are segregated. Locators are also stored in a separate file which can help in modularization
+
+Test steps:
+User navigates to "Leagues" bottom tab and finds a list of Leagues. Name of the league is parameterized. Script scrolls the league until the end of all the available options if the League name is not displayed in the current view. Number of scrolls is not hardcoded which can be helpful when the list of leagues expands.
+Per requirement, user navigates to the required league and verifies the title of the League intended to be selected. 
+User then navigates to the subtab "Leaders" and verifies that the subscreen is selected and the user is still under the selected League.
+Validations are performed to ensure the data displayed on the screen is available for displayed headers as a regression.
+Test then clicks on "Back" button and verifies the "Leagues" menu tab is displayed 
+
 ### Prerequisites
 
 Before running the test scripts, ensure you have the following installed:
 - Java JDK (version 14)
 - Maven
 - Appium Server (Appium client version used are specified in pom.xml)
-- Android SDK 
+- Android SDK
 
 ### Installation
 
